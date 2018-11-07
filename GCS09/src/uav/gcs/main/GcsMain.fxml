@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" prefWidth="1200.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uav.gcs.main.GcsMainController">
+   <left>
+      <VBox maxWidth="350.0" minWidth="350" prefWidth="350.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="hudPane" maxHeight="300.0" maxWidth="350.0" minHeight="300.0" minWidth="350.0" prefHeight="300.0" prefWidth="350.0" />
+            <HBox spacing="10.0" styleClass="pane2">
+               <children>
+                  <Button fx:id="btnConnectConfig" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnConnectConfig" prefHeight="40.0" text="연결설정" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnConnect" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnConnect" prefHeight="40.0" text="연결하기" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnArm" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnArm" prefHeight="40.0" text="시동걸기" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="pane2">
+               <children>
+      			   <TextField fx:id="txtTakeoffHeight" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="20.0" text="10" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+      			   <Label text="m">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="btnTakeoff" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnTakeoff" prefHeight="40.0" text="이륙" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnLand" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnLand" prefHeight="40.0" text="착륙" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnRtl" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#handleBtnRtl" prefHeight="40.0" text="복귀" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <VBox prefWidth="100.0" spacing="5.0" styleClass="pane2" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="cam0Pane" styleClass="pane2" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="statusTableView" prefWidth="200.0" styleClass="pane">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="centerPane" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="UAV Ground Control Station" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

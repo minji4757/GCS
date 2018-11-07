@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uav.gcs.hud.HudController">
+   <children>
+      <Canvas fx:id="canvas1" height="300.0" width="350.0" />
+      <Canvas fx:id="canvas2" height="300.0" width="350.0" />
+      <AnchorPane fx:id="anchorPane" prefHeight="300.0" prefWidth="350.0">
+         <children>
+            <Label layoutX="306.0" layoutY="31.0" text="ALT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAltitude" alignment="CENTER_RIGHT" layoutX="266.0" layoutY="55.0" prefHeight="23.0" prefWidth="72.0" text="30 m" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBattery" layoutX="9.0" layoutY="271.0" text="BAT: 12.4V  11A  100%" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblGpsFixed" alignment="CENTER_RIGHT" layoutX="228.0" layoutY="271.0" prefHeight="19.0" prefWidth="107.0" text="GPS Fixed" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSystemStatus" layoutX="12.0" layoutY="31.0" text="POWEROFF" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblArmed" layoutX="9.0" layoutY="234.0" text="DISARMED" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMode" alignment="CENTER_RIGHT" layoutX="228.0" layoutY="234.0" prefHeight="23.0" prefWidth="107.0" text="STABLIZED" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAirSpeed" layoutX="10.0" layoutY="192.0" text="AS: 0 m/s " textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblGroundSpeed" layoutX="9.0" layoutY="208.0" text="GS: 0 m/s " textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <Label id="lblInfo" fx:id="lblInfo" alignment="CENTER" layoutX="7.0" layoutY="87.0" prefHeight="23.0" prefWidth="337.0" textFill="RED">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="cam1Pane" prefHeight="300.0" prefWidth="350.0">
+         <children>
+            <Canvas fx:id="cam1Canvas" height="300.0" width="350.0" />
+            <GridPane prefHeight="300.0" prefWidth="350.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnMoveNorth" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-padding: 10 10 10 20" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                  <Button fx:id="btnMoveSouth" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-padding: 10 10 10 20" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+                  <Button fx:id="btnMoveWest" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-padding: 10 10 10 20" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button fx:id="btnMoveEast" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-padding: 10 10 10 20" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Button fx:id="btnRotateNorth" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-padding: 10 10 10 22" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>
